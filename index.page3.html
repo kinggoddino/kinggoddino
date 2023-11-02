@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #153b64;
+            color: white;
+            padding: 20px 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header span {
+            display: block;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .page-container {
+            border: 2px solid #153b64;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .back-button {
+            padding: 10px 15px;
+            background-color: #0d2947;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #042046;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <div>
+                <h1>모니터링 페이지_ 일단 이미지로 넣었어요</h1>
+                <span>Temperature Control Monitoring</span>
+            </div>
+            <a href="index.page2.html" class="back-button">뒤로가기</a>
+        </div>
+        <div class="content">
+            <img src="page3_graph.png" alt="모니터링 그래프">
+        </div>
+    </div>
+</body>
+</html>

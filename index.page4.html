@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Record and Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #153b64;
+            color: white;
+            padding: 20px 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header span {
+            display: block;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .page-container {
+            border: 2px solid #153b64;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .back-button {
+            padding: 10px 15px;
+            background-color: #0d2947;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #042046;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .content img {
+            max-width: 60%;
+            height: auto;
+        }
+
+        .content p {
+            font-size: 20px; 
+            margin-bottom: 20px;
+        }
+
+        .result-button {
+            display: block; 
+            width: 60%; 
+            margin: 20px auto; 
+            padding: 15px 20px; 
+            background-color: rgb(33, 141, 58); 
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            font-size: 20px; 
+            text-align: center; 
+        }
+    
+        .result-button:hover {
+            background-color: #155022;
+        }
+    
+        .result-button i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <div>
+                <h1>데이터 페이지</h1>
+                <span>Data Analysis and Records</span>
+            </div>
+            <a href="index.page2.html" class="back-button">뒤로가기</a>
+        </div>
+        <div class="content">
+            <h2>데이터 관련 기록, 분석 및 리포트를 확인하기</h2>
+            <img src="page4.png" alt="데이터 이미지" style="width: 100%; height: auto; margin-top: 20px;">
+            
+            <a href="https://docs.google.com/spreadsheets/d/18vsvIyCvEfp0mCTQEcqcPGq_NgMNTnFo/edit#gid=472202112" target="_blank" class="result-button" style="display: block; text-align: center; background-color: green; color: white; padding: 20px 40px; margin: 30px auto; font-size: 20px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">
+                <i class="fas fa-folder-open"></i> Open Results
+            </a>
+        </div>
+    </div>
+    </body>
+    </html>
