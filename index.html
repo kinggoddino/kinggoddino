@@ -17,7 +17,7 @@
     
         .login-container {
             width: 300px;
-            padding: 40px;
+            padding: 50px;
             border: 2px solid #0a4275; 
             border-radius: 10px; 
             text-align: center;
@@ -28,12 +28,19 @@
         .login-container img {
             max-width: 50%; 
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
     
         h1 {
             color: #333; 
-            margin-bottom: 50px;
+            margin-bottom: 10px; 
+        }
+        
+        
+        .subtitle {
+            color: #777; 
+            font-size: 1.1em; 
+            margin-bottom: 50px; 
         }
     
         .login-form {
@@ -57,11 +64,20 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px; 
-            transition: background-color 0.3s; 
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; 
+            box-shadow: 3px 4px 8px rgba(0,0,0,0.5); 
         }
     
         .login-form button:hover {
-            background-color: #00408d; 
+            background-color: #023779;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+            transform: translateY(-2px); 
+        }
+    
+       
+        .login-form button:active {
+            transform: translateY(1px); 
+            box-shadow: none; 
         }
     </style>
     
@@ -69,11 +85,12 @@
 <body>
     <div class="login-container">
         <img src="신한로고.png" alt="신한 로고">
-        <h1>경화대 현장실사를 위한 페이지</h1>
+        <h1>Thermal Solutions</h1>
+        <div class="subtitle">Temperature Control System</div> 
         <form class="login-form" action="index.page2.html">
-            <input type="text" placeholder="아이디 입력하는척 하기" required>
-            <input type="password" placeholder="비밀번호도" required>
-            <button type="submit">이걸 누르면 시작하는걸로</button>
+            <input type="text" placeholder="아이디를 입력하세요" required>
+            <input type="password" placeholder="비밀번호를 입력하세요" required>
+            <button type="submit">Log in</button>
         </form>
     </div>
 </body>
