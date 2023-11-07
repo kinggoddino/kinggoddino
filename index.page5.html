@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Dashboard</title>
+    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 5px solid #0a4275;
+        }
+
+        .header {
+            background-color: #0c3b68;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center; 
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .title-icon {
+            width: 50px;
+            filter: invert(100%);
+            margin-right: 20px;
+        }
+
+        .title-text {
+            text-align: left;
+        }
+
+        .back-button {
+            padding: 10px 15px;
+            background-color: white; 
+            color: #0a4275; 
+            border: 2px solid #0a4275; 
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-left: auto;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .back-button:hover {
+            background-color: #e7effa; 
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2); 
+        }
+
+        .setting-item {
+            margin-bottom: 15px;
+        }
+
+        .setting-label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .slider {
+            margin-left: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-left: 10px;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider.round {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider.round {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider.round:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .setting-item {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .logout-button {
+            padding: 10px 15px;
+            background-color: #d9534f; 
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-top: 20px; 
+            display: block; 
+            width: 100%;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-button:hover {
+            background-color: #c9302c; 
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .setting-label, .setting-control {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title-container">
+            <img src="https://icons.getbootstrap.com/assets/icons/gear-fill.svg" class="title-icon" alt="Settings Icon">
+            <div class="title-text">
+                <h1>Settings Dashboard</h1>
+                <span>Configure your controller settings here.</span>
+            </div>
+        </div>
+        <a href="index.page2.html" class="back-button">Back</a>
+    </div>
+
+    <div class="content">
+        <div class="setting-item">
+            <label for="temperature-setting" class="setting-label">Temperature Setting Point:</label>
+            <input type="range" id="temperature-setting" name="temperature-setting" min="0" max="200" value="110" class="slider">
+            <span id="temperature-value">110°</span>
+        </div>
+
+    <div class="setting-item">
+        <span class="setting-label">Excel Auto Save Mode:</span>
+        <label class="switch">
+            <input type="checkbox" id="excel-auto-save">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="setting-item">
+        <label for="notification-volume" class="setting-label">Notification Volume:</label>
+        <input type="range" id="notification-volume" name="notification-volume" min="0" max="100" value="50" class="slider">
+        <span id="volume-value">50%</span>
+    </div>
+
+    <div class="setting-item">
+        <label for="sync-frequency" class="setting-label">Data Sync Frequency:</label>
+        <select id="sync-frequency" name="sync-frequency">
+            <option value="5min">Every 5 Minutes</option>
+            <option value="15min">Every 15 Minutes</option>
+            <option value="30min">Every 30 Minutes</option>
+            <option value="1hour">Every Hour</option>
+            <option value="manual">Manually</option>
+        </select>
+    </div>
+
+</div>
+
+<script>
+    var temperatureSlider = document.getElementById("temperature-setting");
+    var temperatureValue = document.getElementById("temperature-value");
+
+    temperatureSlider.oninput = function() {
+        temperatureValue.innerHTML = this.value + "°";
+    }
+    
+    var volumeSlider = document.getElementById("notification-volume");
+    var volumeValue = document.getElementById("volume-value");
+
+    volumeSlider.oninput = function() {
+        volumeValue.innerHTML = this.value + "%";
+    }
+</script>
+
+    <button class="logout-button">Log Out</button>
+</body>
+</html>
